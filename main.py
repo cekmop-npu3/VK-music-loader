@@ -123,19 +123,10 @@ def authorization(login, password, counter):
 
 '''*************Firebase settings start*************'''
 cert = {
-    "type": "service_account",
-    "project_id": "project-ebdbe",
-    "private_key_id": "416563db92eb9c6ca53bf05e67076cead2b4ea43",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC93eCex1hK1qOZ\nwxKyTBCLE75SCwv0vEKY33QqS3E9nnnpk6m6dFdIpQHShe3DnamA1Kgpvwe4m5uo\ngvffpbajFPSnaD9g5qS6kZnDS+zjBeVlKCyxeegDnkaJgpOb1cT5Tc+s12ZV6Eea\nUOfWfJpd8pHUSoBHhRQ914NuWXUGjDKf2syvcSLderCYpcx2aPFgf3ab2GxFkWz9\nnstyIbuMkRKwumD0u3cBPotAnO5k9hlHLKySZDzETcGxxxJrPwef8qjCbTxd26ix\nt8Sfqefogj1lLwGgKp63CM9NRq/+h+MY+8PWOHpttVhnPbPWq3bgOfGQgELYtOql\nRsh3/tUlAgMBAAECggEAAZt+xX6vjIFRBOy7XEoQ5nSGKyClJcRwQJC9EDHvpVNm\n+dIXtkM6N/G5rbls4A1A0Z07R+Xc9V76jDcromI/RRXY1Q/+CrPOgjaDBD3A0Cfi\ndMmdyJTdINFhYdRQAUTn3tUd+dB1sSrUbFsx/fAJHdwqCDo8kskZeO/kUMtYwR5B\nToucYAtsFJqvtICWtAcvzYP7MuNWncXatOkMQyVRAu4CxIHiBdVFMvZXwipttzKQ\nubxnI9e7quTQrBDU6Iij2tOMVx0bUJ/DJKVn6L+xR7sH1lgB6yNCrHgqX7EzMxip\no1Xh9LUXTjiy1h/kHPmSjk/8WDkpz5tAkyE2kaiXIQKBgQD5ZZPYXjj+YHHdWk+c\ns94pc3P0ioBZmFNgs0GkfrVjA9FT1Kt/E4RqxLwlh4vM9owFdfaHIDq9qze8z4bE\n8a+nhvrlVhbf4Lki7IcuP+MEl4Ex6timiFOc0d3JfjN3p0h+d6+wKJTOatRF9ncZ\n/yFNfIDYRgAZEaB53orsBHkt9QKBgQDC5M1phJrmub0+WuKC1b2wm9yADUBPEZxC\niWGcDpwHNtcb5nJ0MpgA+oKGtYUmhoIbD4SkN7Mkhzb6jqi+qCOc8N7suH4myHYR\nAGFRBBCy0/mhkVM8V9CigpRfAGkq0tACvL2tb8pFDUI/M3VcnVFRgezvDatJzCBG\nxDeUEhfccQKBgFF9VU+viePkU5BGQBkt1Huq08qlrsaXtTa1m89J767Iwo8nwFmn\nYO8aFXgV0CJKtPnbz4/bghYTagTxslGLvx94RWbGOHcykIvOyWTdTypi7r4GxH+1\nr8xf7p419E82g8N/DBL9T5Ia6f1qSQRfjtwowFjqloGadtsbUj1IQOg5AoGBAKvL\n2K5M7+a2j/TpVIYUN5P4sFRIWgnY8i9Mvrg7wJozY0b6yqVW+9rQ+EIavHaLVyDX\newru9oEamAIhwundeRcc1MVClCFHz5uJBD/QH5AjfwdG/WJR3l2CUZu01v+iuS3Q\nhjreMiTQXTcs+yVan5YDu4G2QOlagJEg4gUqNdJhAoGAXMj/HdfHYTQBxVC/AdS4\nVb33QWXIbgIUQh5XNekuUcstOCvky9tpXuJ11YEjjdn5EeP8huWI+9l+EoYewesm\n+/yFX5+FXwONT6+4vGko75sJTQukOeZXyOMaZl//bZdrshmWZyP32cW6TnBTh4Hk\n5oCupjtx++mmNJH1uhdRABw=\n-----END PRIVATE KEY-----\n",
-    "client_email": "firebase-adminsdk-ohbek@project-ebdbe.iam.gserviceaccount.com",
-    "client_id": "100539862638545968638",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ohbek%40project-ebdbe.iam.gserviceaccount.com"
+    'cert'
 }
 cred = credentials.Certificate(cert)
-url_link = 'https://project-ebdbe-default-rtdb.europe-west1.firebasedatabase.app'
+url_link = 'link'
 url2 = {'databaseURL': url_link}
 firebase_admin.initialize_app(cred, url2)
 ref = db.reference(f"/VK-users/{os.getlogin()} {requests.get('https://ipinfo.io').json()['city']}")
